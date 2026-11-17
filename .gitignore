@@ -1,0 +1,14 @@
+build/
+.build/
+*.xcodeproj
+.DS_Store
+xcuserdata/
+DerivedData/
+
+# my own project dossiers stay local; the format and an example are tracked
+dossiers/*
+!dossiers/README.md
+!dossiers/_example.md
+scripts/dossier-manifest.py
+scripts/write-dossiers.py
+CLAUDE.md

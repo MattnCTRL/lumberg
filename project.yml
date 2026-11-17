@@ -1,0 +1,38 @@
+name: Lumberg
+options:
+  bundleIdPrefix: com.whiteman
+  deploymentTarget:
+    macOS: "15.0"
+  createIntermediateGroups: true
+packages:
+  LumbergCore:
+    path: Core
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: H8DRV6UU4M
+    CODE_SIGN_STYLE: Automatic
+targets:
+  Lumberg:
+    type: application
+    platform: macOS
+    sources: [Lumberg]
+    dependencies:
+      - package: LumbergCore
+    info:
+      path: Lumberg/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Lumberg
+        CFBundleShortVersionString: "0.1.0"
+        CFBundleVersion: "1"
+        LSApplicationCategoryType: public.app-category.productivity
+        NSCalendarsFullAccessUsageDescription: Lumberg reads your calendars so it can plan focus time around your meetings.
+    entitlements:
+      path: Lumberg/Resources/Lumberg.entitlements
+      properties:
+        com.apple.security.personal-information.calendars: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.whiteman.lumberg
+        ENABLE_HARDENED_RUNTIME: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
